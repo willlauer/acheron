@@ -25,15 +25,15 @@ export default function BlogsPage() {
         <div className="space-y-6">
           <article className="border border-gray-200 dark:border-gray-800 rounded-lg p-6 hover:shadow-lg transition-shadow">
             <h2 className="text-2xl font-semibold text-black dark:text-white mb-4">
-              <Link href="/blogs/replaying-fragmented-ip" className="hover:text-blue-600 dark:hover:text-blue-400">
-                Replaying Fragmented IP
+              <Link href="/blogs/replaying-pcap-localhost" className="hover:text-blue-600 dark:hover:text-blue-400">
+                Replaying Pcap over Localhost
               </Link>
             </h2>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               Exploring the challenges of replaying pcap data locally using tcpreplay, specifically working with fragmented lidar data and the solutions involving virtual ethernet interfaces.
             </p>
             <Link 
-              href="/blogs/replaying-fragmented-ip"
+              href="/blogs/replaying-pcap-localhost"
               className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 font-medium"
             >
               Read more →
@@ -42,5 +42,5 @@ export default function BlogsPage() {
         </div>
       </main>
     </div>
-  )
+  );
 }

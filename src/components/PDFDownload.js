@@ -2,17 +2,11 @@
 
 import { useState } from 'react';
 
-interface PDFDownloadProps {
-  targetId?: string;
-  fileName?: string;
-  className?: string;
-}
-
 export default function PDFDownload({ 
   targetId = 'main-content', 
   fileName = 'page',
   className = ''
-}: PDFDownloadProps) {
+}) {
   const [isGenerating, setIsGenerating] = useState(false);
 
   const downloadPDF = async () => {
@@ -34,10 +28,10 @@ export default function PDFDownload({
         backgroundColor: '#ffffff',
         scrollX: 0,
         scrollY: 0,
-        ignoreElements: (element: any) => {
+        ignoreElements: (element) => {
           return element.tagName === 'STYLE' && element.textContent?.includes('lab(');
         },
-        onclone: (clonedDoc: any) => {
+        onclone: (clonedDoc) => {
           const styles = clonedDoc.querySelectorAll('style');
           styles.forEach(style => {
             if (style.textContent?.includes('lab(') || style.textContent?.includes('oklab(')) {
@@ -58,7 +52,7 @@ export default function PDFDownload({
           `;
           clonedDoc.head.appendChild(fallbackStyle);
         }
-      } as any);
+      });
 
       const imgData = canvas.toDataURL('image/png');
       const pdf = new jsPDF('p', 'mm', 'a4');
