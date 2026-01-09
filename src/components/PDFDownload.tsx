@@ -21,7 +21,7 @@ export default function PDFDownload({
     try {
       // Dynamic imports for client-side only libraries
       const html2canvas = (await import('html2canvas')).default;
-      const jsPDF = (await import('jspdf')).jsPDF;
+      const jsPDF = (await import('jspdf')).default;
       
       const element = targetId ? document.getElementById(targetId) : document.body;
       
